@@ -1,0 +1,26 @@
+nav{
+    // position: absolute;
+    width: 100%;
+    // background-color: orange;
+    padding: 5% 10% 5% 14%;
+    font-family: $headerfontfamily;
+    height: 10vh;
+    @include flexbox(row, space-between, center);
+    ul{
+        @include flexbox(row, space-evenly, center);
+        list-style: none;
+        font-weight: bold;
+        width: 40%;
+        li{
+            &:nth-child(4){
+                height: 7px;
+                width: 7px;
+                border-radius: 10px;
+                background-color: $grayishBlue;
+            }
+            &:nth-child(5){
+                color: $grayishBlue;
+            }
+        }
+    }
+}
