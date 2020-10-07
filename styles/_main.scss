@@ -13,7 +13,7 @@ body {
     right: 0;
     width: 50%;
     height: 50%;
-    z-index: -1;
+    z-index: -10;
     border-bottom-left-radius: 60px;
     position: absolute;
     background-color: $lightGrayishBlue;
@@ -25,7 +25,6 @@ main {
   @include flexbox(row, space-between, center);
   section {
     &:nth-child(1) {
-      // background-color: orange;
       height: 60vh;
       width: 50%;
       @include flexbox(column, center, flex-start);
@@ -59,13 +58,13 @@ main {
         color: $grayishBlue;
         font-weight: 500;
         margin-bottom: 3em;
-      } 
-      div{
+      }
+      div {
         @include flexbox(row, space-between, center);
         height: 2.5em;
         width: 55%;
         // font-size: 17px;
-        button{
+        button {
           height: 100%;
           width: 50%;
           background-color: $primaryRed;
@@ -74,13 +73,13 @@ main {
           font-weight: 700;
           font-size: 15px;
           border-radius: 5px;
-          &:hover{
+          &:hover {
             filter: brightness(120%) saturate(120%);
           }
         }
-        p{
-        color: $grayishBlue;
-        letter-spacing: 1.5px;
+        p {
+          color: $grayishBlue;
+          letter-spacing: 1.5px;
         }
       }
     }
@@ -91,6 +90,58 @@ main {
       img {
         position: absolute;
         right: -1;
+      }
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+  body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    // padding-left: 10%;
+  }
+  main {
+    overflow-x: hidden;
+    padding-top: 15vh;
+    // padding-left: 10%;
+    @include flexbox(column-reverse, flex-start, center);
+    section {
+      &:nth-child(2) {
+        width: 100vw;
+        height: 50%;
+        img {
+          position: relative;
+          height: 30vh;
+        }
+      }
+      &:nth-child(1) {
+        // background-color: orange;
+        width: 100vw;
+        margin-top: 0;
+        p {
+          &:nth-child(1) {
+            span {
+              margin-right: 10px;
+            }
+          }
+        }
+        h1 {
+          font-size: 40px;
+        }
+        div{
+        @include flexbox(row, flex-start, center);
+          width: 90vw;
+          height: 2.2em;
+          button{
+            font-size: 12px;
+            width: 40%;
+            margin-right: 10px;
+          }
+          p{
+            font-size: 12px;
+          }
+        }
       }
     }
   }

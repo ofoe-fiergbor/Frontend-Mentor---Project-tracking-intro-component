@@ -16,7 +16,7 @@ body .right_bg {
   right: 0;
   width: 50%;
   height: 50%;
-  z-index: -1;
+  z-index: -10;
   border-bottom-left-radius: 60px;
   position: absolute;
   background-color: #eef3f6;
@@ -141,9 +141,77 @@ main section:nth-child(2) img {
   right: -1;
 }
 
+@media screen and (max-width: 380px) {
+  body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+  }
+  main {
+    overflow-x: hidden;
+    padding-top: 15vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main section:nth-child(2) {
+    width: 100vw;
+    height: 50%;
+  }
+  main section:nth-child(2) img {
+    position: relative;
+    height: 30vh;
+  }
+  main section:nth-child(1) {
+    width: 100vw;
+    margin-top: 0;
+  }
+  main section:nth-child(1) p:nth-child(1) span {
+    margin-right: 10px;
+  }
+  main section:nth-child(1) h1 {
+    font-size: 40px;
+  }
+  main section:nth-child(1) div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 90vw;
+    height: 2.2em;
+  }
+  main section:nth-child(1) div button {
+    font-size: 12px;
+    width: 40%;
+    margin-right: 10px;
+  }
+  main section:nth-child(1) div p {
+    font-size: 12px;
+  }
+}
+
 nav {
   width: 100%;
-  padding: 5% 10% 5% 14%;
+  padding: 5% 15%;
   font-family: "Barlow Condensed", sans-serif;
   height: 10vh;
   display: -webkit-box;
@@ -159,6 +227,10 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+nav .burger {
+  display: none;
 }
 
 nav ul {
@@ -189,5 +261,99 @@ nav ul li:nth-child(4) {
 
 nav ul li:nth-child(5) {
   color: #a0a1ac;
+}
+
+@media screen and (max-width: 380px) {
+  nav {
+    width: 100vw;
+    overflow-x: hidden;
+    padding: 5% 10%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: 50vh;
+    position: absolute;
+    z-index: 19;
+    top: 0;
+  }
+  nav div {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: flex;
+            flex-direction: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  nav div .burger {
+    display: block;
+  }
+  nav div .open {
+    display: block;
+  }
+  nav div .close {
+    display: none;
+    z-index: 99;
+  }
+  nav ul {
+    background-color: #fff;
+    -webkit-box-shadow: -5px 4px 13px 1px rgba(0, 0, 0, 0.25);
+            box-shadow: -5px 4px 13px 1px rgba(0, 0, 0, 0.25);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 70%;
+    width: 90%;
+    margin-top: 2em;
+    font-size: 18px;
+    -webkit-transform: translateX(120%);
+            transform: translateX(120%);
+  }
+  nav ul li:nth-child(4) {
+    width: 80%;
+    height: 1.5px;
+    background-color: #eef3f6;
+  }
+}
+
+.navlinksActive {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.navlinksInactive {
+  -webkit-transform: translateX(120%);
+          transform: translateX(120%);
+}
+
+.none {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
 }
 /*# sourceMappingURL=style.css.map */

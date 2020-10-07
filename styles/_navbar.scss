@@ -1,26 +1,91 @@
-nav{
-    // position: absolute;
-    width: 100%;
-    // background-color: orange;
-    padding: 5% 10% 5% 14%;
-    font-family: $headerfontfamily;
-    height: 10vh;
-    @include flexbox(row, space-between, center);
-    ul{
-        @include flexbox(row, space-evenly, center);
-        list-style: none;
-        font-weight: bold;
-        width: 40%;
-        li{
-            &:nth-child(4){
-                height: 7px;
-                width: 7px;
-                border-radius: 10px;
-                background-color: $grayishBlue;
-            }
-            &:nth-child(5){
-                color: $grayishBlue;
-            }
-        }
+nav {
+  // position: absolute;
+  width: 100%;
+  // background-color: orange;
+  padding: 5% 15%;
+  font-family: $headerfontfamily;
+  height: 10vh;
+  @include flexbox(row, space-between, center);
+  .burger {
+    display: none;
+  }
+  ul {
+    @include flexbox(row, space-evenly, center);
+    list-style: none;
+    font-weight: bold;
+    width: 40%;
+    li {
+      &:nth-child(4) {
+        height: 7px;
+        width: 7px;
+        border-radius: 10px;
+        background-color: $grayishBlue;
+      }
+      &:nth-child(5) {
+        color: $grayishBlue;
+      }
     }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  nav {
+    width: 100vw;
+    overflow-x: hidden;
+    padding: 5% 10%;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 50vh;
+    position: absolute;
+    z-index: 19;
+    top: 0;
+
+    div {
+      width: 100%;
+      @include flexbox(flex, space-between, center);
+      //   background-color: orange;
+      .burger {
+        display: block;
+      }
+      .open {
+        display: block;
+      }
+      .close {
+        display: none;
+        z-index: 99;
+      }
+    }
+    ul {
+      background-color: #fff;
+      box-shadow: -5px 4px 13px 1px rgba(0, 0, 0, 0.25);
+      @include flexbox(column, space-evenly, center);
+      height: 70%;
+      width: 90%;
+      margin-top: 2em;
+      font-size: 18px;
+      transform: translateX(120%);
+      li {
+        &:nth-child(4) {
+          width: 80%;
+          height: 1.5px;
+          background-color: $lightGrayishBlue;
+        }
+      }
+    }
+  }
+}
+.navlinksActive {
+  transform: translateX(0%);
+  transition: all .5s ease;
+}
+.navlinksInactive{
+  transform: translateX(120%);
+  
+}
+.none {
+  display: none !important;
+
+}
+.block {
+  display: block !important;
 }
