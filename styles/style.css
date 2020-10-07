@@ -106,7 +106,7 @@ main section:nth-child(1) div {
       -ms-flex-align: center;
           align-items: center;
   height: 2.5em;
-  width: 55%;
+  width: 60%;
 }
 
 main section:nth-child(1) div button {

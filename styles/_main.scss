@@ -62,7 +62,7 @@ main {
       div {
         @include flexbox(row, space-between, center);
         height: 2.5em;
-        width: 55%;
+        width: 60%;
         // font-size: 17px;
         button {
           height: 100%;
